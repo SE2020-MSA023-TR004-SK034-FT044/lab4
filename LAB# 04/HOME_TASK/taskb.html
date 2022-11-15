@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+           color: blue;
+        }
+    </style>
+</head>
+<body>
+  <script>
+    <ul> 
+        <li>
+            window.history.go(-1)
+        </li>
+        <li>
+            window.onpopstate = function(event) {
+                console.log(`location ${document.location} state ${JSON.stringify(event.state)}`);
+              };
+              window.history.pushState(
+                {
+                  foo: "bar"
+                },
+                "",
+                "/foo"
+              );
+              window.history.pushState(
+                {
+                  bar: "baz"
+                },
+                "",
+                "/bar"
+              );
+              window.history.back();
+              window.history.back();
+              window.history.go(2);
+              window.history.go(-2);
+        </li>
+
+    </ul>
+  </script>
+</body>
+</html>
