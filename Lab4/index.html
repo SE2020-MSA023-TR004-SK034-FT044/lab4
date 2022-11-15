@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>LogIn2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        function login() {
+            validateInputs(findInputs())
+        }
+
+        function findInputs() {
+            var email = document.getElementById('name').value;
+            var password = document.getElementById('password').value
+            const inputs = {
+                email: email,
+                password: password
+            }
+            return inputs;
+        }
+        function validateInputs(inputs) {
+            if (inputs.email != '' & inputs.password != '') {
+                var rememberMe = document.getElementById('checkBox').value
+                if (rememberMe) {
+                    document.cookie = inputs.email
+                    alert('user Login success! (cookies saved)')
+                    redirection()
+                } else {
+                    alert('user Login success!')
+                    redirection()
+                }
+               
+            }
+            else {
+                alert('incomplete credentials, fill all the fields')
+                
+            }
+            
+        }
+
+        function redirection() {
+                    window.open('http://127.0.0.1:5500/studentpage.html')
+                    }
+
+        function clear() {
+            var email = document.getElementById('name').value = '';
+            var password = document.getElementById('password').value = ''
+            document.cookie
+        }
+        function focusOn(id) {
+            document.getElementById(id).style.backgroundColor = 'aqua'
+        }
+        function blurOn(id) {
+            document.getElementById(id).style.backgroundColor = 'white'
+        }
+        function checkBoxHandler() {
+            var currentValue = document.getElementById('checkBox').value
+            document.getElementById('checkBox').value = !currentValue
+        }
+
+        function showCookie() {
+            alert(`User Name : ${document.cookie}`)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="waiting-image">
+        <img src="logo.png">
+
+    </div>
+    <div id="formControl">
+        <img src="logo.png" alt="" class="side-images">
+        <form id="myform">
+            <div id="title">
+                <h1>
+                    Log In
+                </h1>
+                <img src="shoutinglime210300005.jpg">
+            </div>
+            <div id="inputFields">
+                <div class="textArea">
+                    <label>
+                        User name
+                    </label>
+                    <input type="text" required class="fields" id="name" onfocus="focusOn(id)" onblur="blurOn(id)" />
+                </div>
+                <div class="textArea">
+                    <label>
+                        Password
+                    </label>
+                    <input type="password" required class="fields" id="password" onfocus="focusOn(id)"
+                        onblur="blurOn(id)" />
+                </div>
+            </div>
+            <div id="buttonContainer">
+                <button onclick="login()" class="buttons ok-button">Ok</button>
+                <button onclick="clear()" id="cancel-button" class="buttons">Cancel</button>
+                <button onclick="showCookie()" class="buttons ok-button">show cookie</button>
+            </div>
+            <div id="checkBox">
+                <input type="checkbox" id="checkBox" value=false onclick="checkBoxHandler()">
+                <label>
+                    Remember me!
+                </label>
+            </div>
+            <p id="test"></p>
+        </form>
+        <img src="logo.png" alt="" class="side-images">
+    </div>
+</body>
+
+</html>

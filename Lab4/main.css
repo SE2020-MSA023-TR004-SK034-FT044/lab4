@@ -1,0 +1,114 @@
+body {
+    width: auto;
+    font-family: 'Calibri';
+background-color: aliceblue;    
+}
+
+#header{
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: aliceblue;
+padding: 50px;
+}
+#links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#formControl{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    
+}
+#inputFields{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.fields{
+    width: auto;
+}
+input  :focus {
+background-color: aqua;
+}
+.textArea{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+#title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: aqua;
+    border-radius: 20px;
+    width: 50%;
+    padding: 30px;
+    background-color: white;
+}
+label{
+    padding-left: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#checkBox{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#buttonContainer{
+    flex: 1;
+    padding: 10px;
+}
+.buttons{
+    width: 80px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+}
+.ok-button{
+    background-color:aliceblue;
+    border-color:aqua;
+        
+}
+#waiting-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+#cancel-button{
+    background-color:palevioletred;
+    border-color:darkred;
+        
+}
+img{
+    width: 20%;
+}
+.image{
+    width: 50%;
+}
+
+.side-images{
+    opacity: 0.3;
+    filter: brightness(1);
+}
